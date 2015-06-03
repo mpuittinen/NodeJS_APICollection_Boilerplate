@@ -29,5 +29,8 @@ router.post('/', function(req, res) {
 });
 
 module.exports = exports = {
-  router: router
+  router: router,
+  dailyjob : null, // pointer to function to run daily
+  weeklyjob : null, // pointer to function to run weekly
+  path : null, // path to endpoint (e.g. companies/getCompany)
 };

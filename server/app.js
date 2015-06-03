@@ -5,6 +5,7 @@ var BasicStrategy = require('passport-http').BasicStrategy;
 var config = require('./config');
 var logger = require('./logger');
 var cors = require('cors');
+var services = require('./services');
 
 // Read variables from environment (easy for development)
 var app = express();
@@ -17,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(passport.initialize());
 
-// Enable CORS for cross site scripting
+// Enable CORS for cross site scripting (access API from )
 app.use(cors());
 
 // Load and register a hander under defined path (defaults to module name)
@@ -35,7 +36,7 @@ app = registerService(app, 'sampleAPI');
 
 // Host documentation
 app.use('/doc',
-  express.static('dist/doc')
+  express.static('server/doc')
 );
 
 /**
