@@ -83,6 +83,7 @@ Tests are defined in the tests directory. By default the following file is inclu
     tests/testSampleAPI.js               
 
 Tests are run using
+
     gulp test
 
 ## TODO
