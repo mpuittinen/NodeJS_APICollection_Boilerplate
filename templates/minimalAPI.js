@@ -1,3 +1,13 @@
+/**
+ * @api {get} /apiendpoint API endpoint address
+ * @apiName apiName (e.g. createAccount)
+ * @apiGroup apiGroup (e.g. Accounts)
+ *
+ * @apiParam {String} Paramname (input)
+ *
+ * @apiSuccess {String} OutputKey 
+ */
+
 var express = require('express');
 var config = require('../config');
 var logger = require('../logger');

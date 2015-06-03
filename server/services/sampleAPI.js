@@ -1,3 +1,14 @@
+/**
+ * @api {get} /sampleAPI Receive greeting from framework
+ * @apiName sampleAPI
+ * @apiGroup Samples
+ *
+ * @apiParam {void} No parameters required
+ *
+ * @apiSuccess {String} message   Greeting from sample API
+ */
+
+
 var express = require('express');
 var config = require('../config');
 var logger = require('../logger');
