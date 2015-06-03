@@ -1,8 +1,9 @@
 # SC5 APIcollection Boilerplate
 
-The API Colleciton boilerplate is a modifiable boilerplate for fast development of APIs / light backends:
-* 
-* Spaces instead of tabs
+The API Colleciton boilerplate is a modifiable boilerplate for fast development of APIs / light backends using javascript (no build system included, i.e. no coffeescript support):
+* Register API endpoints
+* Scheduled tasks
+* Use spaces instead of tabs
 
 ## Installation
 
@@ -71,13 +72,18 @@ instead. Check the IP and replace `localhost` with it:
                                    registered by app.js)
     server/services/sampleAPI.js   Minimal sample service implementation 
 
+    templates/                     Starting point API endpoints (copy to services/)
+    templates/minimalAPI.js        Minimal API implementation (return empty json object)
+
 
 ## Testing
 
 Tests are defined in the tests directory. By default the following file is included:
 
     tests/testSampleAPI.js               
-TBD
+
+Tests are run using
+    gulp test
 
 ## TODO
 
