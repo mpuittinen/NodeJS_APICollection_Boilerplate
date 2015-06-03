@@ -21,18 +21,7 @@ app.use(passport.initialize());
 // Enable CORS for cross site scripting (access API from )
 app.use(cors());
 
-// Load and register a hander under defined path (defaults to module name)
-var registerService = function(app, moduleName, path) {
-  var mod = require('./services/' + moduleName);
-
-  app.use('/' + (path || moduleName),
-    mod.router || mod
-  );
-  return app;
-};
-
-// Include handlers from separate resources
-app = registerService(app, 'sampleAPI');
+app = services.init(app, logger);
 
 // Host documentation
 app.use('/doc',
