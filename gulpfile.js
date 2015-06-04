@@ -9,6 +9,7 @@ var path = require('path'),
 		$ = require('gulp-load-plugins')(),
 		runSequence = require('run-sequence'),
 		eventStream = require('event-stream'),
+                gulpNSP = require('gulp-nsp'),
 		package = require('./package.json');
 
 
@@ -145,8 +146,18 @@ gulp.task('test-teardown', function() {
 		.then(testServer.stop);
 });
 
+//To check your package.json
+gulp.task('test-nsp', function (cb) {
+	gulpNSP('./package.json', cb);
+});
+
 gulp.task('build', function() {
 	return runSequence(['lint','doc']);
+});
+
+// NOTE: Running also build to avoid running against old code
+gulp.task('test-full', ['build'], function() {
+	return runSequence('test-setup', 'test-nsp', 'test-run', 'test-teardown');
 });
 
 // NOTE: Running also build to avoid running against old code
